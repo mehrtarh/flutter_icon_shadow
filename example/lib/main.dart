@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                     color: Colors.lightBlueAccent, size: 36)),
                 IconShadowWidget(Icon(Icons.lightbulb_outline,
                     color: Colors.lightBlueAccent, size: 36),shadowColor: Colors.lightBlueAccent.shade100,),
-        IconShadowWidget(Icon(Icons.lightbulb_outline,
+                IconShadowWidget(Icon(Icons.lightbulb_outline,
                     color: Colors.lightBlueAccent, size: 36),showShadow: false,)
               ],
             ),
