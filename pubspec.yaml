@@ -1,0 +1,17 @@
+name: icon_shadow
+description: flutter icon shadow.
+version: 1.0.0
+author: Mehran Jafari  <mehran.flutter@gmail.com>
+homepage: https://github.com/mehrtarh/flutter_icon_shadow
+
+
+environment:
+  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  meta: ^1.1.6
+
+
+flutter:
