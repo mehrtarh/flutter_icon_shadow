@@ -3,7 +3,7 @@
 Flutter Icon shadow
 
 
-![](https://raw.githubusercontent.com/mehrtarh/flutter_icon_shadow/master/sample.png)
+![](https://github.com/mehrtarh/flutter_icon_shadow/blob/master/sample.PNG?raw=true)
 
 
 #### how to use:
