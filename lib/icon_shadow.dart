@@ -15,12 +15,12 @@ class IconShadowWidget extends StatelessWidget {
   /// relative to the position of the element that is casting it.
   final Offset offset;
 
-  /// The standard deviation of the Gaussian to convolve with the shadow's
+  /// TODO: The standard deviation of the Gaussian to convolve with the shadow's
   /// shape.
-  final double blurRadius;
+  // final double blurRadius;
 
-  /// The amount the icon should be inflated prior to applying the blur.
-  final double spreadRadius;
+  /// TODO: The amount the icon should be inflated prior to applying the blur.
+  // final double spreadRadius;
 
   /// By default, the shadow is solid black with zero [offset], [blurRadius],
   /// and [spreadRadius].
@@ -29,12 +29,13 @@ class IconShadowWidget extends StatelessWidget {
     this.color = const Color(0xFF000000),
     this.showShadow = true,
     this.offset = Offset.zero,
-    this.spreadRadius = 0.0,
-    this.blurRadius = 0.0,
-  }) : assert(
-          blurRadius >= 0.0,
-          'Text shadow blur radius should be non-negative.',
-        );
+    // this.spreadRadius = 0.0,
+    // this.blurRadius = 0.0,
+  });
+  // : assert(
+  //         blurRadius >= 0.0,
+  //         'Text shadow blur radius should be non-negative.',
+  //       );
 
   @override
   Widget build(BuildContext context) {

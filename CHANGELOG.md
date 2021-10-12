@@ -3,6 +3,7 @@
  * Add support for nullsafety
  * Updated example
  * Added golden test
+ * Support parameter `offset` for the shadow
  
  ## [1.0.1] 
 
