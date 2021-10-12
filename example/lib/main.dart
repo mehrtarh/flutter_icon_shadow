@@ -31,10 +31,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black54,
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: const Text("Tab Bar Animation"),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -48,6 +44,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                     color: Colors.lightBlueAccent,
                     size: 36,
                   ),
+                  color: Colors.lightBlueAccent,
                 ),
                 IconShadowWidget(
                   child: const Icon(
@@ -63,6 +60,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                     color: Colors.lightBlueAccent,
                     size: 36,
                   ),
+                  color: Colors.lightBlueAccent,
                   showShadow: false,
                 )
               ],
@@ -84,6 +82,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                     color: Colors.green.shade900,
                     size: 36,
                   ),
+                  color: Colors.green.shade900,
                 ),
                 IconShadowWidget(
                   child: Icon(
@@ -92,6 +91,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                     size: 36,
                   ),
                   showShadow: false,
+                  color: Colors.green.shade900,
                 )
               ],
             ),
