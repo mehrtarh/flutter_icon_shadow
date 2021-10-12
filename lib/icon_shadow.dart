@@ -46,7 +46,7 @@ class IconShadowWidget extends StatelessWidget {
       final dimens = dimensions[i];
       list.addAll([
         Positioned(
-          bottom: dimens,
+          bottom: dimens - offset.dy,
           right: dimens,
           child: IconTheme(
             data: IconThemeData(opacity: opacity),
@@ -61,7 +61,7 @@ class IconShadowWidget extends StatelessWidget {
           ),
         ),
         Positioned(
-          bottom: dimens,
+          bottom: dimens - offset.dy,
           left: dimens,
           child: IconTheme(
             data: IconThemeData(opacity: opacity),
@@ -76,7 +76,7 @@ class IconShadowWidget extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: dimens,
+          top: dimens + offset.dy,
           left: dimens,
           child: IconTheme(
             data: IconThemeData(opacity: opacity),
@@ -91,7 +91,7 @@ class IconShadowWidget extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: dimens,
+          top: dimens + offset.dy,
           right: dimens,
           child: IconTheme(
             data: IconThemeData(opacity: opacity),
@@ -119,7 +119,7 @@ class IconShadowWidget extends StatelessWidget {
     ]);
 
     return Stack(
-      alignment: Alignment(offset.dx, offset.dy),
+      alignment: Alignment.center,
       children: list,
     );
   }
