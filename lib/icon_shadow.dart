@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 
+const _kIconDefaultSize = 24.0;
+
 class IconShadowWidget extends StatelessWidget {
   final Icon child;
   final bool showShadow;
@@ -39,6 +41,9 @@ class IconShadowWidget extends StatelessWidget {
     const opacities = <double>[0.01, 0.06, 0.2];
     const dimensions = <double>[3.0, 2.0, 1.0];
 
+    final currentTheme = Theme.of(context);
+    final iconSize =
+        child.size ?? currentTheme.iconTheme.size ?? _kIconDefaultSize;
     final list = <Widget>[];
 
     for (int i = showShadow ? 0 : 1; i < opacities.length; i++) {
@@ -118,9 +123,13 @@ class IconShadowWidget extends StatelessWidget {
       IconTheme(data: IconThemeData(opacity: 1.0), child: child),
     ]);
 
-    return Stack(
-      alignment: Alignment.center,
-      children: list,
+    return SizedBox(
+      width: iconSize,
+      height: iconSize + offset.dy * 2,
+      child: Stack(
+        alignment: Alignment.center,
+        children: list,
+      ),
     );
   }
 }
