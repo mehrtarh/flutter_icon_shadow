@@ -2,163 +2,99 @@ import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 
 class IconShadowWidget extends StatelessWidget {
-  final Icon icon;
-  final bool showShadow;
+  final Icon child;
   final Color shadowColor;
+  final bool showShadow;
 
-  IconShadowWidget(this.icon, {this.showShadow = true, this.shadowColor});
+  const IconShadowWidget({
+    required this.child,
+    this.shadowColor = Colors.black26,
+    this.showShadow = true,
+  });
 
   @override
   Widget build(BuildContext context) {
+    const opacities = <double>[0.01, 0.06, 0.2];
+    const dimensions = <double>[3.0, 2.0, 1.0];
 
-    double opacity = 0.2;
-    double opacity2 = 0.06;
-    double opacity3 = 0.01;
-    double dimens = 1.0;
-    double dimens2 = 2.0;
-    double dimens3 = 3.0;
-    Color _shadowColor = icon.color;
-    if (shadowColor != null)
-      _shadowColor = shadowColor;
-    List<Widget> list = new List();
-    if (showShadow) {
-      list.addAll([
-        Positioned(
-          bottom: dimens3,
-          right: dimens3,
-          child: IconTheme(
-              data: IconThemeData(
-                opacity: opacity3,
-              ),
-              child: Icon(icon.icon, key: icon.key, color:_shadowColor,
-              size: icon.size,semanticLabel: icon.semanticLabel,textDirection: icon.textDirection)),
-        ),
-        Positioned(
-          bottom: dimens3,
-          left: dimens3,
-          child: IconTheme(
-              data: IconThemeData(
-                opacity: opacity3,
-              ),
-              child: Icon(icon.icon, key: icon.key, color:_shadowColor,
-                  size: icon.size,semanticLabel: icon.semanticLabel,textDirection: icon.textDirection)),
-        ),
-        Positioned(
-          top: dimens3,
-          left: dimens3,
-          child: IconTheme(
-              data: IconThemeData(
-                opacity: opacity3,
-              ),
-              child: Icon(icon.icon, key: icon.key, color:_shadowColor,
-                  size: icon.size,semanticLabel: icon.semanticLabel,textDirection: icon.textDirection)),
-        ),
-        Positioned(
-          top: dimens3,
-          right: dimens3,
-          child: IconTheme(
-              data: IconThemeData(
-                opacity: opacity3,
-              ),
-              child: Icon(icon.icon, key: icon.key, color:_shadowColor,
-                  size: icon.size,semanticLabel: icon.semanticLabel,textDirection: icon.textDirection)),
-        )
-      ]);
+    final list = <Widget>[];
 
-      list.addAll([
-        Positioned(
-          bottom: dimens2,
-          right: dimens2,
-          child: IconTheme(
-              data: IconThemeData(
-                opacity: opacity2,
-              ),
-              child: Icon(icon.icon, key: icon.key, color:_shadowColor,
-                  size: icon.size,semanticLabel: icon.semanticLabel,textDirection: icon.textDirection)),
-        ),
-        Positioned(
-          bottom: dimens2,
-          left: dimens2,
-          child: IconTheme(
-              data: IconThemeData(
-                opacity: opacity2,
-              ),
-              child: Icon(icon.icon, key: icon.key, color:_shadowColor,
-                  size: icon.size,semanticLabel: icon.semanticLabel,textDirection: icon.textDirection)),
-        ),
-        Positioned(
-          top: dimens2,
-          left: dimens2,
-          child: IconTheme(
-              data: IconThemeData(
-                opacity: opacity2,
-              ),
-              child: Icon(icon.icon, key: icon.key, color:_shadowColor,
-                  size: icon.size,semanticLabel: icon.semanticLabel,textDirection: icon.textDirection)),
-        ),
-        Positioned(
-          top: dimens2,
-          right: dimens2,
-          child: IconTheme(
-              data: IconThemeData(
-                opacity: opacity2,
-              ),
-              child: Icon(icon.icon, key: icon.key, color:_shadowColor,
-                  size: icon.size,semanticLabel: icon.semanticLabel,textDirection: icon.textDirection)),
-        )
-      ]);
-
+    for (int i = showShadow ? 0 : 1; i < opacities.length; i++) {
+      final opacity = opacities[i];
+      final dimens = dimensions[i];
       list.addAll([
         Positioned(
           bottom: dimens,
           right: dimens,
           child: IconTheme(
-              data: IconThemeData(
-                opacity: opacity,
-              ),
-              child: Icon(icon.icon, key: icon.key, color:_shadowColor,
-                  size: icon.size,semanticLabel: icon.semanticLabel,textDirection: icon.textDirection)),
+            data: IconThemeData(opacity: opacity),
+            child: Icon(
+              child.icon,
+              key: child.key,
+              color: shadowColor,
+              size: child.size,
+              semanticLabel: child.semanticLabel,
+              textDirection: child.textDirection,
+            ),
+          ),
         ),
         Positioned(
           bottom: dimens,
           left: dimens,
           child: IconTheme(
-              data: IconThemeData(
-                opacity: opacity,
-              ),
-              child: Icon(icon.icon, key: icon.key, color:_shadowColor,
-                  size: icon.size,semanticLabel: icon.semanticLabel,textDirection: icon.textDirection)),
+            data: IconThemeData(opacity: opacity),
+            child: Icon(
+              child.icon,
+              key: child.key,
+              color: shadowColor,
+              size: child.size,
+              semanticLabel: child.semanticLabel,
+              textDirection: child.textDirection,
+            ),
+          ),
         ),
         Positioned(
           top: dimens,
           left: dimens,
           child: IconTheme(
-              data: IconThemeData(
-                opacity: opacity,
-              ),
-              child: Icon(icon.icon, key: icon.key, color:_shadowColor,
-                  size: icon.size,semanticLabel: icon.semanticLabel,textDirection: icon.textDirection)),
+            data: IconThemeData(opacity: opacity),
+            child: Icon(
+              child.icon,
+              key: child.key,
+              color: shadowColor,
+              size: child.size,
+              semanticLabel: child.semanticLabel,
+              textDirection: child.textDirection,
+            ),
+          ),
         ),
         Positioned(
           top: dimens,
           right: dimens,
           child: IconTheme(
-              data: IconThemeData(
-                opacity: opacity,
-              ),
-              child: Icon(icon.icon, key: icon.key, color:_shadowColor,
-                  size: icon.size,semanticLabel: icon.semanticLabel,textDirection: icon.textDirection)),
-        )
+            data: IconThemeData(opacity: opacity),
+            child: Icon(
+              child.icon,
+              key: child.key,
+              color: shadowColor,
+              size: child.size,
+              semanticLabel: child.semanticLabel,
+              textDirection: child.textDirection,
+            ),
+          ),
+        ),
       ]);
     }
 
-    list.add(ClipRect(
+    list.addAll([
+      ClipRect(
         child: BackdropFilter(
-          filter: new ui.ImageFilter.blur(sigmaX: 0.9, sigmaY: 0.9),
-          child: IconTheme(data: IconThemeData(opacity: 1.0), child: icon),
-        )));
-
-    list.add(IconTheme(data: IconThemeData(opacity: 1.0), child: icon));
+          filter: ui.ImageFilter.blur(sigmaX: 0.9, sigmaY: 0.9),
+          child: IconTheme(data: IconThemeData(opacity: 1.0), child: child),
+        ),
+      ),
+      IconTheme(data: IconThemeData(opacity: 1.0), child: child),
+    ]);
 
     return Stack(
       alignment: Alignment.center,

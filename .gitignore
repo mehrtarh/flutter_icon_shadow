@@ -19,3 +19,5 @@ pubspec.lock
 # If you don't generate documentation locally you can remove this line.
 doc/api/
 
+
+example/ios/Flutter/flutter_export_environment.sh
