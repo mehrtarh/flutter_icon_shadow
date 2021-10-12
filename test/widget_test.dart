@@ -43,5 +43,22 @@ void main() {
         ),
       );
     });
+
+    customGoldenTest('Offset: 3, 0', (tester) async {
+      await tester.pumpWidget(
+        generateBaseApp(
+          child: const Center(
+            child: IconShadowWidget(
+              child: Icon(
+                Icons.home,
+                color: Colors.red,
+              ),
+              offset: Offset(3, 0),
+            ),
+          ),
+          backgroundColor: Colors.white,
+        ),
+      );
+    });
   });
 }

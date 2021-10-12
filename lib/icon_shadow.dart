@@ -52,7 +52,7 @@ class IconShadowWidget extends StatelessWidget {
       list.addAll([
         Positioned(
           bottom: dimens - offset.dy,
-          right: dimens,
+          right: dimens - offset.dx,
           child: IconTheme(
             data: IconThemeData(opacity: opacity),
             child: Icon(
@@ -67,7 +67,7 @@ class IconShadowWidget extends StatelessWidget {
         ),
         Positioned(
           bottom: dimens - offset.dy,
-          left: dimens,
+          left: dimens + offset.dx,
           child: IconTheme(
             data: IconThemeData(opacity: opacity),
             child: Icon(
@@ -82,7 +82,7 @@ class IconShadowWidget extends StatelessWidget {
         ),
         Positioned(
           top: dimens + offset.dy,
-          left: dimens,
+          left: dimens + offset.dx,
           child: IconTheme(
             data: IconThemeData(opacity: opacity),
             child: Icon(
@@ -97,7 +97,7 @@ class IconShadowWidget extends StatelessWidget {
         ),
         Positioned(
           top: dimens + offset.dy,
-          right: dimens,
+          right: dimens - offset.dx,
           child: IconTheme(
             data: IconThemeData(opacity: opacity),
             child: Icon(
@@ -124,7 +124,7 @@ class IconShadowWidget extends StatelessWidget {
     ]);
 
     return SizedBox(
-      width: iconSize,
+      width: iconSize + offset.dx * 2,
       height: iconSize + offset.dy * 2,
       child: Stack(
         alignment: Alignment.center,
