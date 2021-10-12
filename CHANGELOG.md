@@ -2,6 +2,7 @@
 
  * Add support for nullsafety
  * Updated example
+ * Added golden test
  
  ## [1.0.1] 
 
