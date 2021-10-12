@@ -3,14 +3,36 @@ import 'dart:ui' as ui;
 
 class IconShadowWidget extends StatelessWidget {
   final Icon child;
-  final Color shadowColor;
   final bool showShadow;
+  final Color color;
 
+  /// The displacement of the shadow from the casting element.
+  ///
+  /// Positive x/y offsets will shift the shadow to the right and down, while
+  /// negative offsets shift the shadow to the left and up. The offsets are
+  /// relative to the position of the element that is casting it.
+  final Offset offset;
+
+  /// The standard deviation of the Gaussian to convolve with the shadow's
+  /// shape.
+  final double blurRadius;
+
+  /// The amount the icon should be inflated prior to applying the blur.
+  final double spreadRadius;
+
+  /// By default, the shadow is solid black with zero [offset], [blurRadius],
+  /// and [spreadRadius].
   const IconShadowWidget({
     required this.child,
-    this.shadowColor = Colors.black26,
+    this.color = const Color(0xFF000000),
     this.showShadow = true,
-  });
+    this.offset = Offset.zero,
+    this.spreadRadius = 0.0,
+    this.blurRadius = 0.0,
+  }) : assert(
+          blurRadius >= 0.0,
+          'Text shadow blur radius should be non-negative.',
+        );
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +53,7 @@ class IconShadowWidget extends StatelessWidget {
             child: Icon(
               child.icon,
               key: child.key,
-              color: shadowColor,
+              color: color,
               size: child.size,
               semanticLabel: child.semanticLabel,
               textDirection: child.textDirection,
@@ -46,7 +68,7 @@ class IconShadowWidget extends StatelessWidget {
             child: Icon(
               child.icon,
               key: child.key,
-              color: shadowColor,
+              color: color,
               size: child.size,
               semanticLabel: child.semanticLabel,
               textDirection: child.textDirection,
@@ -61,7 +83,7 @@ class IconShadowWidget extends StatelessWidget {
             child: Icon(
               child.icon,
               key: child.key,
-              color: shadowColor,
+              color: color,
               size: child.size,
               semanticLabel: child.semanticLabel,
               textDirection: child.textDirection,
@@ -76,7 +98,7 @@ class IconShadowWidget extends StatelessWidget {
             child: Icon(
               child.icon,
               key: child.key,
-              color: shadowColor,
+              color: color,
               size: child.size,
               semanticLabel: child.semanticLabel,
               textDirection: child.textDirection,
@@ -97,7 +119,7 @@ class IconShadowWidget extends StatelessWidget {
     ]);
 
     return Stack(
-      alignment: Alignment.center,
+      alignment: Alignment(offset.dx, offset.dy),
       children: list,
     );
   }
