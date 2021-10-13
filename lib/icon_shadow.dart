@@ -21,8 +21,7 @@ class IconShadowWidget extends StatelessWidget {
   // TODO: The amount the icon should be inflated prior to applying the blur.
   // final double spreadRadius;
 
-  /// By default, the shadow is solid black with zero [offset], [blurRadius],
-  /// and [spreadRadius].
+  /// By default, the shadow is solid black with zero [offset].
   const IconShadowWidget({
     required this.child,
     this.color = const Color(0xFF000000),
