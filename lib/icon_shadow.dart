@@ -125,8 +125,8 @@ class IconShadowWidget extends StatelessWidget {
     ]);
 
     return SizedBox(
-      width: iconSize + offset.dx * 2,
-      height: iconSize + offset.dy * 2,
+      width: iconSize + offset.dx,
+      height: iconSize + offset.dy,
       child: Stack(
         alignment: Alignment.center,
         children: list,
