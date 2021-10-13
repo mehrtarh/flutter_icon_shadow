@@ -15,11 +15,10 @@ class IconShadowWidget extends StatelessWidget {
   /// relative to the position of the element that is casting it.
   final Offset offset;
 
-  /// TODO: The standard deviation of the Gaussian to convolve with the shadow's
-  /// shape.
+  // TODO: The standard deviation of the Gaussian to convolve with the shadow's shape.
   // final double blurRadius;
 
-  /// TODO: The amount the icon should be inflated prior to applying the blur.
+  // TODO: The amount the icon should be inflated prior to applying the blur.
   // final double spreadRadius;
 
   /// By default, the shadow is solid black with zero [offset], [blurRadius],
