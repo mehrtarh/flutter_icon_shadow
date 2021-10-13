@@ -6,7 +6,7 @@ Flutter Icon shadow
 
 ## **Breaking changes from 2.0.0**
 
-Now the icon parameter is a named argument `child` , you can also use a new parameter `offset` to set the shadow offset, also the shadow is now by default black and not the color of the icon.
+The icon parameter is now a named argument `child` , you can also use a new parameter `offset` to set the shadow offset, also the shadow is now by default black and not the color of the icon.
 
 ```dart
 IconShadowWidget(
