@@ -2,31 +2,60 @@
 
 Flutter Icon shadow
 
-
 ![](https://github.com/mehrtarh/flutter_icon_shadow/blob/master/sample.PNG?raw=true)
 
+## **Breaking changes from 2.0.0**
 
-#### how to use:
+The icon parameter is now a named argument `child` , you can also use a new parameter `offset` to set the shadow offset, also the shadow is now by default black and not the color of the icon.
 
-##### 1. add dependencies to pubspec.yaml:
-
-```yaml
- icon_shadow: ^1.0.1
+```dart
+IconShadowWidget(
+    child: Icon(
+        Icons.lightbulb_outline,
+        color: Colors.lightBlueAccent,
+        size: 36,
+    ),
+    offset: Offset(0, 3),
+)
 ```
 
-##### 2. add icons:
+## How to use:
 
+### 1. Add dependencies to `pubspec.yaml`
+
+```yaml
+ icon_shadow: any
+```
+
+### 2. Add icons
 
 ```dart
 Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                IconShadowWidget(Icon(Icons.lightbulb_outline,
-                    color: Colors.lightBlueAccent, size: 36)),
-                IconShadowWidget(Icon(Icons.lightbulb_outline,
-                    color: Colors.lightBlueAccent, size: 36),shadowColor: Colors.lightBlueAccent.shade100,),
-                IconShadowWidget(Icon(Icons.lightbulb_outline,
-                    color: Colors.lightBlueAccent, size: 36),showShadow: false,)
-              ],
-            )
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+        IconShadowWidget(
+            child: Icon(
+                Icons.lightbulb_outline,
+                color: Colors.lightBlueAccent,
+                size: 36,
+            ),
+        ),
+        IconShadowWidget(
+            child: Icon(
+                Icons.lightbulb_outline,
+                color: Colors.lightBlueAccent,
+                size: 36,
+            ),
+            shadowColor: Colors.lightBlueAccent.shade100,
+        ),
+        IconShadowWidget(
+            child: Icon(
+                Icons.lightbulb_outline,
+                color: Colors.lightBlueAccent,
+                size: 36,
+            ),
+            showShadow: false,
+        ),
+    ],
+)
 ```
